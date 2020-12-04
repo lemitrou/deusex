@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="DEUSEX Assignment" verbose="1" >
+    <test name="Login Scenarions" >
+        <classes>
+            <class name="LoginTest" />
+        </classes>
+    </test>
+</suite>
