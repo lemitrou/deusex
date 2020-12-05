@@ -55,4 +55,26 @@ public class LoginTest {
                 .then().statusCode(400)
                 .body("error.messages", equalTo("Invalid username-password combination."));
     }
+
+    @Test
+    void Login_Empty_Username(){
+        credentials.put("email","");
+
+        given().contentType(ContentType.JSON)
+                .body(credentials)
+                .when().post(path)
+                .then().statusCode(400)
+                .body("error.messages", equalTo("Invalid username-password combination."));
+    }
+
+    @Test
+    void Login_Empty_Password(){
+        credentials.put("password","");
+
+        given().contentType(ContentType.JSON)
+                .body(credentials)
+                .when().post(path)
+                .then().statusCode(400)
+                .body("error.messages", equalTo("Invalid username-password combination."));
+    }
 }
